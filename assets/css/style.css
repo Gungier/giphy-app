@@ -40,7 +40,9 @@ h1{
 }
 
 .btn:hover{
-	color: #9207ef;
+	box-shadow: 30px 30px 30px rgba(0,0,0, 0.5);
+	transition: width 3s;
+	color: #ffffff;
 }
 
 .btn:focus{
@@ -86,12 +88,17 @@ h1{
 #submit{
     float: right;
 	margin-top: 1.5vh;
+	box-shadow: -8px -8px -8px rgba(0,0,0, 0.5);
+	transition: width 3s;
+	cursor: pointer;
 }
 
 #cartoon-show{
     float: right;
 	margin-top: 1.5vh;
 	width: max-content;
+	box-shadow: 8px 8px 8px rgba(0,0,0, 0.5);
+	transition: width 3s;
 }
 
 #cartoon-show:focus{

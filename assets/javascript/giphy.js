@@ -8,13 +8,13 @@
 
 var topics = ["Rick and Morty", "Voltron", "Castlevania", "Teen Titans", "Gravity Falls", "Family Guy",];
 var numberOfGifs = 10;
-var cutOffRating = "pg-13";
+var cutOffRating = "R";
 
 function renderButtons() {
     for (var i = 0; i < topics.length; i++) {
         var newButton = $("<button>");
-        newButton.addClass("btn")
-        newButton.addClass("cartoon-button")
+        newButton.addClass("btn cartoon-button")
+        // newButton.addClass("cartoon-button")
         newButton.text(topics[i]);
         $("#button-container").append(newButton);
     }
@@ -22,8 +22,8 @@ function renderButtons() {
 
     $(".cartoon-button").on("click", function () {
         $(".gif-image").off("click");
-        $("#gif-container").empty();
-        $("#gif-container").removeClass("dashed-border");
+        $("#gif-container").empty().removeClass("dashed-border");
+        //$("#gif-container").removeClass("dashed-border");
         
         populateGifContainer($(this).text());
     });
@@ -54,8 +54,8 @@ function populateGifContainer(show) {
 
             var newImage = $("<img src = '" + element.images.fixed_height_still.url + "'/>");
             newImage.addClass("gif-image");
-            newImage.attr("state", "still")
-            newImage.attr("still-data", element.images.fixed_height_still.url);
+            newImage.attr("state", "still", "still-data", element.images.fixed_height_still.url);
+            //newImage.attr("still-data", element.images.fixed_height_still.url);
             newImage.attr("animated-data", element.images.fixed_height.url)
             newDiv.append(newImage);
             $("#gif-container").append(newDiv);
